@@ -24,3 +24,5 @@ Will I fix the issues or will make progress on the skript?
     You can do as you please with the skript.
 
 Thanks that VLC has a pip package for some reason but gezz THANKS! Wouldn't be able to do this so easy without
+
+For my faild attempts look at the dead / test repo : https://github.com/AquaFrostByte/Tkinter
