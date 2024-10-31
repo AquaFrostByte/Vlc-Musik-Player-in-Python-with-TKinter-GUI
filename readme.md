@@ -6,6 +6,7 @@ There is a Win version the main version is for Linux (I use arch btw)
 
 
 Knowen bugs i am to lazzy to fix:
+
     -If you press Stop -> everythin other then play | it will only load song 1 (i know the fix(deactivate the other buttons but to lazzy :3))
 
     -If you spam it breaks or doesnt seems random 
