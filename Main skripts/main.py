@@ -35,7 +35,7 @@ frame3.grid(row=0, column=1, rowspan=2, pady=1 , columnspan=3)  # Place the fram
 # region Top labels and input
 
 #Just Text
-label = tk.Label(frame1, text="File Path:")
+label = tk.Label(frame1, text="Path:")
 label.grid(row=0, column=0, padx=1, pady=5)
 
 #Input for the Dir
