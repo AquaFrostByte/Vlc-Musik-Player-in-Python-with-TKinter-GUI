@@ -44,6 +44,15 @@ path_song.grid(row=0, column=1, padx=1, pady=5)
 
 # endregion
 
+#Song length that shit is not working at all: it stops the gui too need to use a multi threated script bur too lazzy >:3
+#def player_song_length():
+#    audio = MP3(media_list[song])
+#    print(audio.info.length)
+#    leng = audio.info.length
+#    round(leng)
+#    time.sleep(leng)
+#    player_skip_song()
+
 #Load songs
 def player_load_songs():
     #Var 
@@ -53,6 +62,7 @@ def player_load_songs():
     #Reset
     song = 0
     song_count = -1
+    media_list = []
 
     #Get the dir
     file_path = path_song.get()
@@ -90,6 +100,7 @@ def player_skip_song():
     #Var
     global song
     song = song + 1
+
 
     #Just for Debugging
     print(song)
@@ -143,6 +154,9 @@ def player_play():
     now_playing = media_list[song].split("/")[-1]
     player_now_playing.config(text=f"now playing: {now_playing}")
 
+    #Debug
+    print("FUNKTION END")
+
 #Stop function
 def player_stop():
 
@@ -154,7 +168,6 @@ def player_stop():
     global song
 
     song = 0
-    song_count = -1
 
     #When stop we need to? Play!
     player_pause_button.config(text="▶ Resume")

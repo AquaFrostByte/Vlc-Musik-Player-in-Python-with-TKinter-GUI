@@ -1,8 +1,13 @@
+# Notes: USE PyMad to cal the playtime of   
+
+
 #import the needed packges
 
+from mutagen.mp3 import MP3
 import vlc
 import tkinter as tk
 import os
+import time
 
 #Var for the array and counting
 song = 0
@@ -44,6 +49,15 @@ path_song.grid(row=0, column=1, padx=1, pady=5)
 
 # endregion
 
+#Song length that shit is not working at all: it stops the gui too need to use a multi threated script bur too lazzy >:3
+#def player_song_length():
+#    audio = MP3(media_list[song])
+#    print(audio.info.length)
+#    leng = audio.info.length
+#    round(leng)
+#    time.sleep(leng)
+#    player_skip_song()
+
 #Load songs
 def player_load_songs():
     #Var 
@@ -53,6 +67,7 @@ def player_load_songs():
     #Reset
     song = 0
     song_count = -1
+    media_list = []
 
     #Get the dir
     file_path = path_song.get()
@@ -66,7 +81,7 @@ def player_load_songs():
     else:
 
         #Walk through the file_path
-        for root, dirs, files in os.walk(file_path):
+        for root, dir, files in os.walk(file_path):
 
             #Just for Debugging
             print("check2")
@@ -107,6 +122,8 @@ def player_skip_song():
     now_playing = media_list[song].split("\\")[-1]
     player_now_playing.config(text=f"now playing: {now_playing}")
 
+    #player_song_length()
+
     #Resets pause button
     player_pause_button.config(text="⏸ Pause")
     
@@ -123,6 +140,7 @@ def player_previous_song():
     now_playing = media_list[song].split("\\")[-1]
     player_now_playing.config(text=f"now playing: {now_playing}")
     player_pause_button.config(text="⏸ Pause")
+    #player_song_length()
 
 #Main (Play function)
 def player_play():
@@ -143,6 +161,10 @@ def player_play():
     now_playing = media_list[song].split("\\")[-1]
     player_now_playing.config(text=f"now playing: {now_playing}")
 
+    #player_song_length()
+    #Debug
+    print("FUNKTION END")
+
 #Stop function
 def player_stop():
 
@@ -154,7 +176,6 @@ def player_stop():
     global song
 
     song = 0
-    song_count = -1
 
     #When stop we need to? Play!
     player_pause_button.config(text="▶ Resume")
